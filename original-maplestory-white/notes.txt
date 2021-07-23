@@ -1,0 +1,32 @@
+How to convert cursors:
+
+static example:
+run:
+convert something.cur something.png
+touch something.config
+echo '48 5 5 something.png' > something.config
+xcursorgen something.config something
+
+now you got a file called 'something' which you can drag and drop to overwrite a existing cursor file.
+
+
+animated example:
+same process except if you got a .ani file (like I do) convert it to .gif with https://ezgif.com/ani-to-gif
+then convert the gif to pngs with:
+
+convert something.gif something.png
+
+it will return png files like:
+something-0.png
+something-1.png
+something-2.png
+
+in the something.config just put 
+48 5 5 something-0.png
+48 5 5 something-1.png
+48 5 5 something-2.png
+
+
+need better explenation? here are the sources I used:
+https://askubuntu.com/questions/101526/how-can-i-split-an-animated-gif-file-into-its-component-frames
+https://www.linuxquestions.org/questions/linux-newbie-8/trying-to-get-a-cur-file-as-my-cursor-871633/
